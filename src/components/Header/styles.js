@@ -22,8 +22,8 @@ export const ContainerRight = styled.div`
   gap: 1.25rem;
 `;
 export const PageLink = styled.a`
-  color: #555;
-  font-weight: 400;
+  color: ${(props) => (props.isActive ? "#9758a6" : "#555")};
+  font-weight: ${(props) => (props.isActive ? "bold" : "400")};
   cursor: pointer;
 `;
 export const ContainerText = styled.div`

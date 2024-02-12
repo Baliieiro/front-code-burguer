@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import Cart from "../../assets/cart.png";
 import Person from "../../assets/person.png";
+import useUser from "../../hooks/useUser";
 import {
   Container,
   ContainerText,
@@ -9,16 +10,32 @@ import {
   ContainerLeft,
   ContainerRight,
 } from "./styles";
+
 export function Header() {
+  const { push } = useHistory();
+  const { pathname } = useLocation();
+
+  const { logout } = useUser();
+
+  function logoutUser() {
+    logout();
+    push("/login");
+  }
   return (
     <Container>
       <ContainerLeft>
-        <Link to="/">link</Link>
-        <PageLink>Home</PageLink>
-        <PageLink>Ver Produtos</PageLink>
+        <PageLink onClick={() => push("/")} isActive={pathname === "/"}>
+          Home
+        </PageLink>
+        <PageLink
+          onClick={() => push("/produtos")}
+          isActive={pathname.includes("produtos")}
+        >
+          Ver Produtos
+        </PageLink>
       </ContainerLeft>
       <ContainerRight>
-        <PageLink>
+        <PageLink onClick={() => push("/carrinho")}>
           <img src={Cart} alt="logo-carrinho" />
         </PageLink>
         <div className="line"></div>
@@ -28,7 +45,7 @@ export function Header() {
 
         <ContainerText>
           <p>Ola, Daniel</p>
-          <PageLink>Sair</PageLink>
+          <PageLink onClick={logoutUser}>Sair</PageLink>
         </ContainerText>
       </ContainerRight>
     </Container>

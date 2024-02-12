@@ -19,6 +19,10 @@ export function UserContextProvider({ children }) {
     );
   }
 
+  async function logout() {
+    await localStorage.removeItem("codeburguer:userData");
+  }
+
   useEffect(() => {
     const loadUserData = async () => {
       const clientInfo = await localStorage.getItem("codeburguer:userData");
@@ -30,7 +34,7 @@ export function UserContextProvider({ children }) {
     loadUserData();
   }, []);
 
-  const user = { userData, putUserData };
+  const user = { userData, putUserData, logout };
 
   return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
 }
