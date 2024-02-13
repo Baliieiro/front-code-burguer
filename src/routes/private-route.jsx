@@ -5,18 +5,22 @@ import { Header } from "../components";
 
 PrivateRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
+  isAdmin: PropTypes.Boolean,
 };
 
-export default function PrivateRoute({ component, ...rest }) {
+export default function PrivateRoute({ component, isAdmin, ...rest }) {
   const user = localStorage.getItem("codeburguer:userData");
 
   if (!user) {
     return <Redirect to="/login" />;
   }
+  if (isAdmin && !JSON.parse(user).admin) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <>
-      <Header />
+      {!isAdmin && <Header />}
       <Route component={component} {...rest} />
     </>
   );

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Carousel from "react-elastic-carousel";
+import { Link } from "react-router-dom";
 
 import Category from "../../assets/CATEGORIAS.png";
 import api from "../../services/api";
@@ -35,8 +36,14 @@ export function CategoryCarrousel() {
           categories.map((category) => (
             <ContainerItems key={category.id}>
               <Image src={category.url} alt={category.name} />
-
-              <ButtonDefault borderRadius={true}>{category.name}</ButtonDefault>
+              <Link
+                to={{
+                  pathname: "/produtos",
+                  state: { categoryId: category.id },
+                }}
+              >
+                <ButtonDefault>{category.name}</ButtonDefault>
+              </Link>
             </ContainerItems>
           ))}
       </Carousel>

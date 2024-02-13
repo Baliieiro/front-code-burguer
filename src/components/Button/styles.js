@@ -9,7 +9,7 @@ const Button = styled.button`
   font-weight: 500;
   line-height: normal;
   border: none;
-  border-radius: ${(props) => (props.borderRadius ? "8px" : "20px")};
+  border-radius: 20px;
   padding: 0.75rem;
   cursor: pointer;
 

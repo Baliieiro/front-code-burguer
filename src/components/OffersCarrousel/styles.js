@@ -28,7 +28,7 @@ export const SectionContainer = styled.div`
   }
 `;
 export const TitleImage = styled.img`
-  width: 412px;
+  width: 273px;
 `;
 export const ContainerItems = styled.div`
   display: flex;
@@ -39,6 +39,10 @@ export const ContainerItems = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
+  }
+  button {
+    border-radius: 8px;
+    width: 100%;
   }
 `;
 export const Image = styled.img`

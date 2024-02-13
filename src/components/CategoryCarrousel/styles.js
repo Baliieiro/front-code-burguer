@@ -34,6 +34,10 @@ export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  button {
+    border-radius: 8px;
+    width: 100%;
+  }
 `;
 export const Image = styled.img`
   width: 200px;

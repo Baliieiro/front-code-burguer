@@ -15,7 +15,10 @@ export function Header() {
   const { push } = useHistory();
   const { pathname } = useLocation();
 
-  const { logout } = useUser();
+  const {
+    userData: { name },
+    logout,
+  } = useUser();
 
   function logoutUser() {
     logout();
@@ -44,7 +47,7 @@ export function Header() {
         </PageLink>
 
         <ContainerText>
-          <p>Ola, Daniel</p>
+          <p>Ola, {name}</p>
           <PageLink onClick={logoutUser}>Sair</PageLink>
         </ContainerText>
       </ContainerRight>

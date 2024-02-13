@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Button from "./styles";
 
 ButtonDefault.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export function ButtonDefault({ children, ...rest }) {

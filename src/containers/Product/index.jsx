@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
 import ImgLogo from "../../assets/product-logo.svg";
@@ -12,9 +13,17 @@ import {
   ProductsContainer,
 } from "./styles";
 
-export function Product() {
+Product.propTypes = {
+  location: PropTypes.object,
+};
+
+export function Product({ location: { state } }) {
+  let categoryId = 0;
+  if (state?.categoryId) {
+    categoryId = state.categoryId;
+  }
   const [categories, setCategories] = useState([]);
-  const [activeCategory, setActiveCategory] = useState(0);
+  const [activeCategory, setActiveCategory] = useState(categoryId);
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   useEffect(() => {
