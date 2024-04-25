@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-import ImgLogo from "../../assets/product-logo.svg";
+import ImgLogo from "../../assets/logo-product.svg";
 import { CardProduct } from "../../components";
 import api from "../../services/api";
 import formatCurrency from "../../utils/formatCurrency";
