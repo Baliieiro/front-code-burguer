@@ -6,7 +6,7 @@ import * as Yup from "yup";
 
 import BgBurguer from "../../assets/background-burguer.svg";
 import Logo from "../../assets/logo-image.svg";
-import { ButtonDefault } from "../../components";
+import { ButtonDefault, ErrorMessage } from "../../components";
 import useUser from "../../hooks/useUser";
 import api from "../../services/api";
 import {
@@ -16,7 +16,6 @@ import {
   Label,
   Input,
   P,
-  ErrorMessage,
 } from "./styles";
 
 export function Login() {

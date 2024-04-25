@@ -71,10 +71,3 @@ export const P = styled.p`
     cursor: pointer;
   }
 `;
-
-export const ErrorMessage = styled.p`
-  font-size: 14px;
-  line-height: 16px;
-  color: #cc1717;
-  margin: ${(props) => (props.$error ? "2px 0 1rem" : "2px 0 2rem")};
-`;

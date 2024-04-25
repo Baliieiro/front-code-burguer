@@ -6,7 +6,7 @@ import * as Yup from "yup";
 
 import Logo from "../../assets/logo-image.svg";
 import BgRegister from "../../assets/register-image.svg";
-import { ButtonDefault } from "../../components";
+import { ButtonDefault, ErrorMessage } from "../../components";
 import api from "../../services/api";
 import {
   Container,
@@ -15,7 +15,6 @@ import {
   Label,
   Input,
   P,
-  ErrorMessage,
 } from "./styles";
 
 export function Register() {

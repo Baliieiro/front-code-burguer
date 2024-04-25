@@ -1,8 +1,25 @@
+import { PropTypes } from "prop-types";
+
+import { SideMenu } from "../../components";
+import paths from "../../constants/paths";
+import EditProduct from "./EditProduct";
+import ListProduct from "./ListProduct";
+import NewProduct from "./NewProduct";
+import Orders from "./Orders";
 import { Container } from "./styles";
-export function Admin() {
+
+Admin.propTypes = {
+  match: PropTypes.shape({ path: PropTypes.string }),
+};
+
+export function Admin({ match: { path } }) {
   return (
     <Container>
-      <h1>Admin</h1>
+      <SideMenu />
+      {path === paths.Orders && <Orders />}
+      {path === paths.Products && <ListProduct />}
+      {path === paths.NewProducts && <NewProduct />}
+      {path === paths.EditProducts && <EditProduct />}
     </Container>
   );
 }

@@ -50,9 +50,10 @@ export const Input = styled.input`
   padding-left: 10px;
   background: #fff;
   padding: 8px 12px;
+  font-size: 1rem;
   width: 100%;
   box-shadow: 3px 3px 10px 0px rgba(74, 144, 226, 0.19);
-  width: 390px;
+  min-width: 390px;
   border: ${(props) => (props.$error ? "2px solid #cc1717" : "none")};
 `;
 export const P = styled.p`
@@ -70,12 +71,4 @@ export const P = styled.p`
     line-height: normal;
     text-decoration: underline;
   }
-`;
-
-export const ErrorMessage = styled.p`
-  font-size: 14px;
-  line-height: 16px;
-  color: #cc1717;
-  margin-top: 2px;
-  margin-bottom: 2rem;
 `;

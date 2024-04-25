@@ -5,7 +5,7 @@ import { Header } from "../components";
 
 PrivateRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.func, PropTypes.element]),
-  isAdmin: PropTypes.Boolean,
+  isAdmin: PropTypes.bool,
 };
 
 export default function PrivateRoute({ component, isAdmin, ...rest }) {
