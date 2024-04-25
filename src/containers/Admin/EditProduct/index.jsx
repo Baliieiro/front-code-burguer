@@ -19,6 +19,7 @@ export default function EditProduct() {
       state: { product },
     },
   } = useHistory();
+
   const [categories, setCategories] = useState([]);
   const [fielName, setFileName] = useState(null);
   const schema = Yup.object().shape({
@@ -46,7 +47,7 @@ export default function EditProduct() {
     productDataFormData.append("offer", data.offer);
 
     await toast.promise(
-      api.post(`products/${product.id}`, productDataFormData),
+      api.put(`products/${product.id}`, productDataFormData),
       {
         pending: "Editando novo produto",
         success: "Produto editado com sucesso",

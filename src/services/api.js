@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://burguer-code-production.up.railway.app/",
+  baseURL: "https://burguer-code-production.up.railway.app",
 });
 
 api.interceptors.request.use(async (config) => {
